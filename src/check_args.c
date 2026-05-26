@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:05:15 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 12:39:46 by meqian           ###   ########.fr       */
+/*   Updated: 2026/05/26 17:26:12 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	check_dup(int *arry, int size)
 {

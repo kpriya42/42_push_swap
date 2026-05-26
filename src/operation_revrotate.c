@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operation_revrotate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:25:51 by kri-             ###   ########.fr       */
+/*   Created: 2026/05/26 16:32:19 by kri-              #+#    #+#             */
+/*   Updated: 2026/05/26 17:26:29 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_input	*parse_args(int ac, char **av)
+static void	reverse_rotate(t_stack **node)
 {
-	
+
 }
 
-int	main(int ac, char **av)
+void	rra(t_stack **a)
 {
-	t_input	clean_data;
+	reverse_rotate(a);
+}
 
-	if (ac == 1)
-		return (0);
-	clean_data = parse_args(ac, av);
+void	rrb(t_stack **b)
+{
+	reverse_rotate(b);
+}
 
-	return (0);
+void	rrr(t_stack **a, t_stack **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
 }

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:25:51 by kri-             ###   ########.fr       */
+/*   Created: 2026/05/26 16:22:23 by kri-              #+#    #+#             */
+/*   Updated: 2026/05/26 17:26:04 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_input	*parse_args(int ac, char **av)
+static void	push(t_stack **stack1, t_stack ** stack2)
 {
 	
 }
 
-int	main(int ac, char **av)
+void	pa(t_stack **a, t_stack **b)
 {
-	t_input	clean_data;
+	push(a, b);
+}
 
-	if (ac == 1)
-		return (0);
-	clean_data = parse_args(ac, av);
-
-	return (0);
+void	pb(t_stack **b, t_stack **a)
+{
+	push(b, a);
 }

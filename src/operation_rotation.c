@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operation_rotation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:25:51 by kri-             ###   ########.fr       */
+/*   Created: 2026/05/26 16:13:45 by kri-              #+#    #+#             */
+/*   Updated: 2026/05/26 17:26:37 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_input	*parse_args(int ac, char **av)
+static void	rotate(t_stack **node)
 {
-	
+
 }
 
-int	main(int ac, char **av)
+void	ra(t_stack **a)
 {
-	t_input	clean_data;
+	rotate(a);
+}
 
-	if (ac == 1)
-		return (0);
-	clean_data = parse_args(ac, av);
+void	rb(t_stack **b)
+{
+	rotate(b);
+}
 
-	return (0);
+void	rr(t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
 }

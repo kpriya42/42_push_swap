@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:25:51 by kri-             ###   ########.fr       */
+/*   Created: 2026/05/26 15:35:17 by kri-              #+#    #+#             */
+/*   Updated: 2026/05/26 17:26:41 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_input	*parse_args(int ac, char **av)
+static void	swap_top(t_stack **node)
 {
-	
+	t_stack	*top;
+	t_stack	*second;
+
+	top = *node;
+	second = top->next;
+	top->next = second->next;
+	if (second->next != NULL)
+		second->next->prev = top;
+	second->prev = NULL;
+	second->next = top;
+	top->prev = second;
+	*node = second;
 }
 
-int	main(int ac, char **av)
+void	sa(t_stack **a)
 {
-	t_input	clean_data;
+	swap_top(a);
+}
 
-	if (ac == 1)
-		return (0);
-	clean_data = parse_args(ac, av);
+void	sb(t_stack **b)
+{
+	swap_top(b);
+}
 
-	return (0);
+void	ss(t_stack **a, t_stack **b)
+{
+	swap_top(a);
+	swap_top(b);
 }
