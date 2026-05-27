@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:05:15 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:26:12 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/27 16:20:51 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 int	check_dup(int *arry, int size)
 {
@@ -68,19 +68,26 @@ void	free_split(char **splited_arry)
 void	error_exit(char **splited_arry)
 {
 	write (2, "Error\n", 6);
-	if (splited_arry)
-		free_split(splited_arry);
+	free_split(splited_arry);
 	exit (1);
 }
 
-int	check_convert(char *av, char **splited_arry)
+int	check_bench(char **av)
 {
-	long	num;
+	int	i;
+	int	bench;
 
-	if (!all_digit(av))
-		error_exit(splited_arry);
-	num = ft_atoi(av);
-	if (num > 2147483647 || num < -2147483648)
-		error_exit(splited_arry);
-	return ((int) num);
+	i = 0;
+	bench = 0;
+	while (av[i])
+	{
+		if (ft_strcmp(av[i], "--bench") == 0)
+		{
+			bench = 1;
+			remove_flag(av, i);
+		}
+		else
+			i ++;
+	}
+	return (bench);
 }

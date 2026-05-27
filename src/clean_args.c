@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   clean_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 23:46:14 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 17:26:16 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/27 16:03:47 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 char	**split_input(int ac, char **av)
 {
@@ -74,4 +74,49 @@ int	strategy_selector(char **av)
 			i ++;
 	}
 	return (strategy);
+}
+
+long	ft_atol(char *str)
+{
+	long	n;
+	int		sign;
+
+	n = 0;
+	sign = 1;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str ++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -sign;
+		str ++;
+	}
+	while (*str)
+	{
+		n = (*str - '0' + n * 10);
+		str ++;
+	}
+	return (sign * n);
+}
+
+void	check_space(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j] && av[i][j] == ' ')
+		{
+			j ++;
+		}
+		if (av[i][j] == '\0')
+		{
+			write (2, "Error\n", 6);
+			exit (1);
+		}
+		i ++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/26 18:46:53 by meqian           ###   ########.fr       */
+/*   Updated: 2026/05/27 16:09:20 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define SIMPLE 1
 # define MEDIUM 2
 # define COMPLEX 3
-# include "../libft/libft.h"
+# include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -33,6 +33,7 @@ typedef struct s_input
 	int	*numbers;
 	int	size;
 	int	strategy;
+	int	bench_mark;
 }	t_input;
 
 void	sample_func(void);
@@ -57,6 +58,9 @@ int		check_convert(char *av, char **splited_arry);
 char	**split_input(int ac, char **av);
 void	remove_flag(char **av, int index);
 int		strategy_selector(char **av);
+long	ft_atol(char *str);
+void	check_space(char **av);
+int		check_bench(char **av);
 
 t_input	parse_args(int ac, char **av);
 
