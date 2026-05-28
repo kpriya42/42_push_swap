@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/05/28 17:17:02 by kri-             ###   ########.fr        #
+#    Updated: 2026/05/28 19:12:18 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,16 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS_DIR = src
-SRCS = main.c \
+SRCS = test_file_1.c \
+	   main.c \
        check_args.c \
        clean_args.c \
 	   init_stack.c \
-	   display_stacks.c
-#	   operation_push.c \
-#	   operation_rotation.c \
-#	   operation_revrotate.c \
-#	   operation_swap.c
+	   push_swap_utils.c \
+	   operation_swap.c \
+	   operation_rotate.c \
+	   operation_revrotate.c \
+	   operation_push.c
 	   
 OBJS_DIR = obj
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
@@ -48,15 +49,18 @@ $(NAME): $(LIBFT) $(OBJS)
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	
+
+# delete *.o files
 clean:
 	$(RM) -r $(OBJS_DIR)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
+# remove *.o and *.a  files
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
+# rebuild
 re: fclean all
 
 .PHONY: all clean fclean re

@@ -6,22 +6,21 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 17:37:06 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 19:54:14 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_convert(char *av, char **splited_arry)
-{
-	long	num;
+void	test_operations(t_stack *a, t_stack *b);
+void	display_stack(const t_stack *a, const t_stack *b);
+void	test_input(t_input clean_data);
 
-	if (!all_digit(av))
-		error_exit(splited_arry);
-	num = ft_atol(av);
-	if (num > 2147483647 || num < -2147483648)
-		error_exit(splited_arry);
-	return ((int) num);
+void	error_exit(char **splited_arry)
+{
+	write (2, "Error\n", 6);
+	free_split(splited_arry);
+	exit (1);
 }
 
 t_input	parse_args(int ac, char **av)
@@ -56,25 +55,17 @@ int	main(int ac, char **av)
 	t_input	clean_data;
 	t_stack	*a;
 	t_stack	*b;
-	int		i;
 
+	a = NULL;
+	b = NULL;
 	if (ac == 1)
 		return (0);
 	check_space(av);
 	clean_data = parse_args(ac, av);
-	puts("-----------------------------");
-	printf("bench mark : %d\n", clean_data.bench_mark);
-	printf("strategy type : %d\n", clean_data.strategy);
-	printf("size of input : %d\n", clean_data.size);
-	i = 0;
-	while (i < clean_data.size)
-	{
-		printf("args unsorted order :%d\n", clean_data.numbers[i]);
-		i ++;
-	}
-	puts("|||||||||||||||||||||||||||||");
+	test_input(clean_data);
 	a = init_stack(&clean_data, STACK_A);
 	b = init_stack(&clean_data, STACK_B);
 	display_stack(a, b);
+	test_operations(a, b);
 	return (0);
 }

@@ -6,17 +6,27 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 16:22:23 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 15:37:22 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 19:52:49 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_stack **stack1, t_stack ** stack2)
+static void	push(t_stack **stack1, t_stack **stack2)
 {
-	//put top of stack2 on top of stack1
-	
-	
+	t_stack	*head2;
+
+	if (!stack2 || !(*stack2))
+		return ;
+	head2 = *stack2;
+	*stack2 = head2->next;
+	if (*stack2)
+		(*stack2)->prev = NULL;
+	head2->next = *stack1;
+	head2->prev = NULL;
+	if (*stack1)
+		(*stack1)->prev = head2;
+	*stack1 = head2;
 }
 
 void	pa(t_stack **a, t_stack **b)

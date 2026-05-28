@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:36:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 17:24:32 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 18:39:56 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ static t_stack	*create_new_node(int value, int stack_name)
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	if (stack_name == STACK_B)
-		node->value = 0;
-	else
+	if (stack_name == STACK_A)
 		node->value = value;
+	else
+		node->value = 0;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
 }
-
 
 t_stack	*init_stack(t_input *input, int stack_name)
 {
