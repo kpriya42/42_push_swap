@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/27 16:37:33 by meqian           ###   ########.fr       */
+/*   Updated: 2026/05/28 13:43:00 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_input	parse_args(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_input	clean_data;
+	int		i;
 
 	if (ac == 1)
 		return (0);
@@ -63,7 +64,7 @@ int	main(int ac, char **av)
 	printf("bench mark : %d\n", clean_data.bench_mark);
 	printf("strategy type : %d\n", clean_data.strategy);
 	printf("size of input : %d\n", clean_data.size);
-	int i = 0;
+	i = 0;
 	while (i < clean_data.size)
 	{
 		printf("args unsorted order :%d\n", clean_data.numbers[i]);

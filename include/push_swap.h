@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/27 16:09:20 by meqian           ###   ########.fr       */
+/*   Updated: 2026/05/28 13:52:45 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_input
 	int	bench_mark;
 }	t_input;
 
-void	sample_func(void);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
@@ -58,7 +57,7 @@ int		check_convert(char *av, char **splited_arry);
 char	**split_input(int ac, char **av);
 void	remove_flag(char **av, int index);
 int		strategy_selector(char **av);
-long	ft_atol(char *str);
+//long	ft_atol(char *str);
 void	check_space(char **av);
 int		check_bench(char **av);
 

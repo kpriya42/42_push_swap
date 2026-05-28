@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: meqian <meqian@student.42.fr>              +#+  +:+       +#+         #
+#    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/05/26 19:33:39 by meqian           ###   ########.fr        #
+#    Updated: 2026/05/28 13:59:20 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,11 @@ INCLUDES = -Iinclude -Ilibft
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = src/main.c \
-       src/check_args.c \
-       src/clean_args.c \
-#        src/operation_push.c \
-#        src/operation_swap.c \
-#        src/operation_rotate.c \
-#        src/operation_reverse.c
-
+SRCS_DIR = src
+SRCS = main.c \
+       check_args.c \
+       clean_args.c
+	   
 OBJS_DIR = obj
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
@@ -42,10 +39,10 @@ $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 # Compile objects
-$(OBJS_DIR)/%.o: %.c
-	@mkdir -p $(dir $@)
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
+	
 clean:
 	$(RM) -r $(OBJS_DIR)
 	$(MAKE) -C $(LIBFT_DIR) clean

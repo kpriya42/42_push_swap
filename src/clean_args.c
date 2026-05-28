@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 23:46:14 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/27 16:03:47 by meqian           ###   ########.fr       */
+/*   Updated: 2026/05/28 13:51:39 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,28 +76,28 @@ int	strategy_selector(char **av)
 	return (strategy);
 }
 
-long	ft_atol(char *str)
-{
-	long	n;
-	int		sign;
+//long	ft_atol(char *str)
+//{
+//	long	n;
+//	int		sign;
 
-	n = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str ++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -sign;
-		str ++;
-	}
-	while (*str)
-	{
-		n = (*str - '0' + n * 10);
-		str ++;
-	}
-	return (sign * n);
-}
+//	n = 0;
+//	sign = 1;
+//	while ((*str >= 9 && *str <= 13) || *str == 32)
+//		str ++;
+//	if (*str == '-' || *str == '+')
+//	{
+//		if (*str == '-')
+//			sign = -sign;
+//		str ++;
+//	}
+//	while (*str)
+//	{
+//		n = (*str - '0' + n * 10);
+//		str ++;
+//	}
+//	return (sign * n);
+//}
 
 void	check_space(char **av)
 {
