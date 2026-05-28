@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 13:52:45 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 17:38:12 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define SIMPLE 1
 # define MEDIUM 2
 # define COMPLEX 3
+# define STACK_A 'A'
+# define STACK_B 'B' 
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -24,8 +26,8 @@
 typedef struct s_stack
 {
 	int				value;
-	struct t_stack	*prev;
-	struct t_stack	*next;
+	struct s_stack	*prev;
+	struct s_stack	*next;
 }	t_stack;
 
 typedef struct s_input
@@ -35,6 +37,8 @@ typedef struct s_input
 	int	strategy;
 	int	bench_mark;
 }	t_input;
+
+t_stack	*init_stack(t_input *input, int stack_name);
 
 void	sa(t_stack **a);
 void	sb(t_stack **b);
@@ -62,5 +66,7 @@ void	check_space(char **av);
 int		check_bench(char **av);
 
 t_input	parse_args(int ac, char **av);
+
+void	display_stack(const t_stack *a, const t_stack *b);
 
 #endif

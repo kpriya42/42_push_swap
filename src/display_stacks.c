@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_revrotate.c                              :+:      :+:    :+:   */
+/*   display_stacks.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/26 16:32:19 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 15:37:38 by kri-             ###   ########.fr       */
+/*   Created: 2026/05/28 17:08:23 by kri-              #+#    #+#             */
+/*   Updated: 2026/05/28 17:38:01 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack **node)
+void	display_stack(const t_stack *a, const t_stack *b)
 {
+	t_stack	*atemp;
+	t_stack	*btemp;
 
-}
-
-void	rra(t_stack **a)
-{
-	reverse_rotate(a);
-}
-
-void	rrb(t_stack **b)
-{
-	reverse_rotate(b);
-}
-
-void	rrr(t_stack **a, t_stack **b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
+	atemp = (t_stack *) a;
+	btemp = (t_stack *) b;
+	printf("  A    B\n");
+	while (atemp && btemp)
+	{
+		printf("  %d    %d\n", atemp->value, btemp->value);
+		atemp = atemp->next;
+		btemp = btemp->next;
+	}
 }

@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/05/28 13:59:20 by kri-             ###   ########.fr        #
+#    Updated: 2026/05/28 17:17:02 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,13 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRCS_DIR = src
 SRCS = main.c \
        check_args.c \
-       clean_args.c
+       clean_args.c \
+	   init_stack.c \
+	   display_stacks.c
+#	   operation_push.c \
+#	   operation_rotation.c \
+#	   operation_revrotate.c \
+#	   operation_swap.c
 	   
 OBJS_DIR = obj
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 13:43:00 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 17:37:06 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ t_input	parse_args(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_input	clean_data;
+	t_stack	*a;
+	t_stack	*b;
 	int		i;
 
 	if (ac == 1)
@@ -71,5 +73,8 @@ int	main(int ac, char **av)
 		i ++;
 	}
 	puts("|||||||||||||||||||||||||||||");
+	a = init_stack(&clean_data, STACK_A);
+	b = init_stack(&clean_data, STACK_B);
+	display_stack(a, b);
 	return (0);
 }

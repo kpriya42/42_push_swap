@@ -6,11 +6,11 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 16:13:45 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/26 17:26:37 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 15:37:41 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 static void	rotate(t_stack **node)
 {

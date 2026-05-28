@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/20 12:00:51 by kri-              #+#    #+#              #
-#    Updated: 2026/05/28 13:49:12 by kri-             ###   ########.fr        #
+#    Updated: 2026/05/28 16:23:16 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,20 @@ PART3 = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c ft_lstclea
 
 SRC = ${PART1} ${PART2} ${PART3}
 
-OBJS = ${SRC:.c=.o}
-
-
-$(NAME): ${OBJS}
-		ar rcs ${NAME} ${OBJS}
+OBJS_DIR = obj
+OBJS = $(SRC:%.c=$(OBJS_DIR)/%.o)
 
 all:	${NAME}
 
+$(NAME): ${OBJS}
+		ar rcs ${NAME} ${OBJS}
+		
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
 clean:
-		${RM} ${OBJS}
+		$(RM) -r $(OBJS_DIR)
 
 fclean: clean
 		${RM} ${NAME}

@@ -6,11 +6,11 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 15:35:17 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/26 17:26:41 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 15:37:26 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 static void	swap_top(t_stack **node)
 {
