@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 16:22:23 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 19:52:49 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 20:29:12 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	pa(t_stack **a, t_stack **b)
 	push(a, b);
 }
 
-void	pb(t_stack **b, t_stack **a)
+void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
 }

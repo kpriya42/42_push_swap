@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 19:54:14 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 20:33:11 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int	main(int ac, char **av)
 	check_space(av);
 	clean_data = parse_args(ac, av);
 	test_input(clean_data);
-	a = init_stack(&clean_data, STACK_A);
-	b = init_stack(&clean_data, STACK_B);
-	display_stack(a, b);
+	a = init_stack(&clean_data);
 	test_operations(a, b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

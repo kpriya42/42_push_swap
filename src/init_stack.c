@@ -6,29 +6,26 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:36:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 18:39:56 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 20:19:50 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*create_new_node(int value, int stack_name)
+static t_stack	*create_new_node(int value)
 {
 	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	if (stack_name == STACK_A)
-		node->value = value;
-	else
-		node->value = 0;
+	node->value = value;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
 }
 
-t_stack	*init_stack(t_input *input, int stack_name)
+t_stack	*init_stack(t_input *input)
 {
 	t_stack	*head;
 	t_stack	*tail;
@@ -40,7 +37,7 @@ t_stack	*init_stack(t_input *input, int stack_name)
 	i = 0;
 	while (i < input->size)
 	{
-		new_node = create_new_node(input->numbers[i], stack_name);
+		new_node = create_new_node(input->numbers[i]);
 		if (!new_node)
 			return (NULL);
 		if (!head)
@@ -54,4 +51,18 @@ t_stack	*init_stack(t_input *input, int stack_name)
 		i++;
 	}
 	return (head);
+}
+
+void	free_stack(t_stack **head)
+{
+	t_stack	*tmp;
+
+	if (!head)
+		return ;
+	while (*head)
+	{
+		tmp = (*head)->next;
+		free(*head);
+		*head = tmp;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 18:39:22 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/28 20:20:01 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int		strategy_selector(char **av);
 void	check_space(char **av);
 int		check_bench(char **av);
 
-t_stack	*init_stack(t_input *input, int stack_name);
+t_stack	*init_stack(t_input *input);
+void	free_stack(t_stack **head);
 
 //operations	
 void	sa(t_stack **a);
