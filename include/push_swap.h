@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 20:20:01 by kri-             ###   ########.fr       */
+/*   Updated: 2026/05/29 15:48:16 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define SIMPLE 1
 # define MEDIUM 2
 # define COMPLEX 3
+
 # define STACK_A 'A'
 # define STACK_B 'B' 
 # include "libft.h"
@@ -37,6 +38,25 @@ typedef struct s_input
 	int	strategy;
 	int	bench_mark;
 }	t_input;
+
+typedef struct s_output_helper
+{
+	int		strategy;
+	double	disorder;
+	int		sa_count;
+	int		sb_count;
+	int		ss_count;
+	int		ra_count;
+	int		rb_count;
+	int		rr_count;
+	int		rra_count;
+	int		rrb_count;
+	int		rrr_count;
+	int		pa_count;
+	int		pb_count;
+	int		total_count;
+
+}	t_output;
 
 //input_validation
 t_input	parse_args(int ac, char **av);
@@ -69,5 +89,8 @@ void	rrr(t_stack **a, t_stack **b);
 
 //utils
 t_stack	*find_last(t_stack *stack);
+
+//bench mode output
+void	bench_output(t_output out);
 
 #endif
