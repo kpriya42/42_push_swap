@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/29 15:48:16 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 12:39:31 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define SIMPLE 1
 # define MEDIUM 2
 # define COMPLEX 3
+# define FALSE 0
+# define TRUE 1
 
 # define STACK_A 'A'
 # define STACK_B 'B' 
@@ -71,6 +73,7 @@ int		strategy_selector(char **av);
 void	check_space(char **av);
 int		check_bench(char **av);
 
+//stack allocate, init and free
 t_stack	*init_stack(t_input *input);
 void	free_stack(t_stack **head);
 
@@ -89,6 +92,7 @@ void	rrr(t_stack **a, t_stack **b);
 
 //utils
 t_stack	*find_last(t_stack *stack);
+double	compute_disorder(t_stack *head);
 
 //bench mode output
 void	bench_output(t_output out);
