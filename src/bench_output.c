@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 12:06:39 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/29 15:10:38 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 15:42:43 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	bench_adaptive_output(t_output out, int fd)
 
 static void	bench_operations_output(t_output out, int fd)
 {
-	ft_putstr_fd("[bench] sa:   ", fd);
+	ft_putstr_fd("\n[bench] sa:   ", fd);
 	ft_putnbr_fd(out.sa_count, fd);
 	ft_putstr_fd("   sb:   ", fd);
 	ft_putnbr_fd(out.sb_count, fd);
@@ -45,17 +45,31 @@ static void	bench_operations_output(t_output out, int fd)
 	ft_putnbr_fd(out.rrb_count, fd);
 	ft_putstr_fd("   rrr:   ", fd);
 	ft_putnbr_fd(out.rrr_count, fd);
+	ft_putchar_fd('\n', fd);
+}
+
+static void	ft_putdec(int num, int fd)
+{
+	int	dec[2];
+
+	ft_putchar_fd('.', fd);
+	dec[1] = num % 10;
+	num = num / 10;
+	dec[0] = num % 10;
+	ft_putnbr_fd(dec[0], fd);
+	ft_putnbr_fd(dec[1], fd);
 }
 
 void	bench_output(t_output out)
 {
-	int	fd;
-	int	temp;
+	int		fd;
+	double	temp;
 
 	fd = STDOUT_FILENO;
 	temp = out.disorder * 100;
 	ft_putstr_fd("[bench] disorder: ", fd);
 	ft_putnbr_fd(temp, fd);
+	ft_putdec(temp * 100, fd);
 	ft_putstr_fd("%\n[bench] stratergy: ", fd);
 	if (out.strategy == SIMPLE)
 		ft_putendl_fd("Simple O(n²)", fd);

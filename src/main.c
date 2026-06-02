@@ -6,13 +6,13 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/02 12:48:36 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 15:19:28 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	test_operations(t_stack *a, t_stack *b);
+//void	test_operations(t_stack *a, t_stack *b, t_output *out);
 void	display_stack(const t_stack *a, const t_stack *b);
 void	test_input(t_input clean_data);
 
@@ -50,25 +50,12 @@ t_input	parse_args(int ac, char **av)
 	return (data);
 }
 
-int	sorted_input(t_input *input)
-{
-	int	i;
-
-	i = 0;
-	while (i + 1 < input->size)
-	{
-		if (input->numbers[i] > input->numbers[i + 1])
-			return (FALSE);
-	}
-	free(input->numbers);
-	exit (1);
-}
-
 int	main(int ac, char **av)
 {
-	t_input	clean_data;
-	t_stack	*a;
-	t_stack	*b;
+	t_input		clean_data;
+	t_stack		*a;
+	t_stack		*b;
+	t_output	out;
 
 	a = NULL;
 	b = NULL;
@@ -77,12 +64,20 @@ int	main(int ac, char **av)
 	check_space(av);
 	clean_data = parse_args(ac, av);
 	test_input(clean_data);
-	if (sorted_input(&clean_data) == FALSE)
+	a = init_stack(clean_data);
+	if (a)
 	{
-		a = init_stack(&clean_data);
-		test_operations(a, b);
+		init_out(&clean_data, a, &out);
+		if (out.disorder > 0.0)
+			sort_stack(a, b, &out);
+		else
+		{
+			free_stack(&a);
+			free_stack(&b);
+		}
+		compute_total_ops(&out);
+		bench_output(out);
 	}
-	test_operations(a, b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/02 12:39:31 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 14:19:04 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ typedef struct s_output_helper
 	int		pa_count;
 	int		pb_count;
 	int		total_count;
-
 }	t_output;
 
 //input_validation
@@ -73,26 +72,30 @@ int		strategy_selector(char **av);
 void	check_space(char **av);
 int		check_bench(char **av);
 
-//stack allocate, init and free
-t_stack	*init_stack(t_input *input);
+//Initializations
+t_stack	*init_stack(t_input input);
 void	free_stack(t_stack **head);
+void	init_out(t_input *input, t_stack *a, t_output *out);
+
+void	sort_stack(t_stack *a, t_stack *b, t_output *out);
 
 //operations	
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **b, t_stack **a);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	sa(t_stack **a, t_output *out);
+void	sb(t_stack **b, t_output *out);
+void	ss(t_stack **a, t_stack **b, t_output *out);
+void	pa(t_stack **a, t_stack **b, t_output *out);
+void	pb(t_stack **b, t_stack **a, t_output *out);
+void	ra(t_stack **a, t_output *out);
+void	rb(t_stack **b, t_output *out);
+void	rr(t_stack **a, t_stack **b, t_output *out);
+void	rra(t_stack **a, t_output *out);
+void	rrb(t_stack **b, t_output *out);
+void	rrr(t_stack **a, t_stack **b, t_output *out);
 
 //utils
 t_stack	*find_last(t_stack *stack);
 double	compute_disorder(t_stack *head);
+void	compute_total_ops(t_output *out);
 
 //bench mode output
 void	bench_output(t_output out);

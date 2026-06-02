@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 16:22:23 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 20:29:12 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 14:07:19 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,16 @@ static void	push(t_stack **stack1, t_stack **stack2)
 	*stack1 = head2;
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, t_output *out)
 {
 	push(a, b);
+	out->pa_count++;
+	ft_putendl_fd("pa", STDOUT_FILENO);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, t_output *out)
 {
 	push(b, a);
+	out->pb_count++;
+	ft_putendl_fd("pb", STDOUT_FILENO);
 }

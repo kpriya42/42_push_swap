@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/05/28 20:23:22 by kri-             ###   ########.fr        #
+#    Updated: 2026/06/02 14:00:01 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,12 @@ SRCS = test_file_1.c \
     	clean_args.c \
 		init_stack.c \
 		push_swap_utils.c \
+		push_swap.c \
 		operation_swap.c \
 		operation_rotate.c \
 		operation_revrotate.c \
-		operation_push.c
+		operation_push.c \
+		bench_output.c
 	   
 OBJS_DIR = obj
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
