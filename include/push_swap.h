@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/03 12:34:16 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 16:55:37 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
-	int				total_cost;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
