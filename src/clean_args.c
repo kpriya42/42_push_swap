@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 23:46:14 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 18:37:40 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 17:21:34 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	check_space(char **av)
 		}
 		if (av[i][j] == '\0')
 		{
-			write (2, "Error\n", 6);
+			ft_putendl_fd("Error", STDERR_FILENO);
 			exit (1);
 		}
 		i ++;

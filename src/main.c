@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/02 17:06:20 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 17:21:39 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	test_input(t_input clean_data);
 
 void	error_exit(char **splited_arry)
 {
-	write (2, "Error\n", 6);
+	ft_putendl_fd("Error", STDERR_FILENO);
 	free_split(splited_arry);
 	exit (1);
 }
