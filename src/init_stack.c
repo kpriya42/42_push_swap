@@ -6,11 +6,33 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:36:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/02 13:40:04 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 12:32:35 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	assign_indexes(t_stack *head)
+{
+	t_stack	*current;
+	t_stack	*next;
+	int		index;
+
+	current = head;
+	while (current)
+	{
+		index = 0;
+		next = head;
+		while (next)
+		{
+			if (next->value < current->value)
+				index++;
+			next = next->next;
+		}
+		current->index = index;
+		current = current->next;
+	}
+}
 
 static t_stack	*create_new_node(int value)
 {
@@ -20,6 +42,12 @@ static t_stack	*create_new_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = 0;
+	node->pos = 0;
+	node->target_pos = 0;
+	node->cost_a = 0;
+	node->cost_b = 0;
+	node->total_cost = 0;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
@@ -50,20 +78,21 @@ t_stack	*init_stack(t_input input)
 		tail = new_node;
 		i++;
 	}
+	assign_indexes(head);
 	return (head);
 }
 
 void	free_stack(t_stack **head)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 
 	if (!head)
 		return ;
 	while (*head)
 	{
-		tmp = (*head)->next;
+		temp = (*head)->next;
 		free(*head);
-		*head = tmp;
+		*head = temp;
 	}
 }
 

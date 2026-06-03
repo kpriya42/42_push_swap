@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/02 14:19:04 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 12:34:16 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # define COMPLEX 3
 # define FALSE 0
 # define TRUE 1
+# define LOW_DISORDER 0.2
+# define HIGH_DISORDER 0.5
 
-# define STACK_A 'A'
-# define STACK_B 'B' 
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -29,6 +29,12 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
+	int				total_cost;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
@@ -77,14 +83,22 @@ t_stack	*init_stack(t_input input);
 void	free_stack(t_stack **head);
 void	init_out(t_input *input, t_stack *a, t_output *out);
 
-void	sort_stack(t_stack *a, t_stack *b, t_output *out);
+//push_swap.c
+void	sort_stack(t_stack **a, t_stack **b, t_output *out);
+void	sort_three(t_stack **a, t_output *out);
+double	compute_disorder(t_stack *head);
+void	compute_total_ops(t_output *out);
+
+void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out);
+//void	medium_sort(t_stack **a, t_stack **b, t_output *out);
+//void	complex_sort(t_stack **a, t_stack **b, t_output *out);
 
 //operations	
 void	sa(t_stack **a, t_output *out);
 void	sb(t_stack **b, t_output *out);
 void	ss(t_stack **a, t_stack **b, t_output *out);
 void	pa(t_stack **a, t_stack **b, t_output *out);
-void	pb(t_stack **b, t_stack **a, t_output *out);
+void	pb(t_stack **a, t_stack **b, t_output *out);
 void	ra(t_stack **a, t_output *out);
 void	rb(t_stack **b, t_output *out);
 void	rr(t_stack **a, t_stack **b, t_output *out);
@@ -94,8 +108,9 @@ void	rrr(t_stack **a, t_stack **b, t_output *out);
 
 //utils
 t_stack	*find_last(t_stack *stack);
-double	compute_disorder(t_stack *head);
-void	compute_total_ops(t_output *out);
+int		stack_size(t_stack *stack);
+int		is_sorted(t_stack *stack);
+t_stack	*find_max_index_node(t_stack *stack);
 
 //bench mode output
 void	bench_output(t_output out);

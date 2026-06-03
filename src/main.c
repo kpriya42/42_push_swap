@@ -6,13 +6,13 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/02 15:19:28 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 17:06:20 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//void	test_operations(t_stack *a, t_stack *b, t_output *out);
+//void	test_operations(t_stack **a, t_stack **b, t_output *out);
 void	display_stack(const t_stack *a, const t_stack *b);
 void	test_input(t_input clean_data);
 
@@ -69,12 +69,8 @@ int	main(int ac, char **av)
 	{
 		init_out(&clean_data, a, &out);
 		if (out.disorder > 0.0)
-			sort_stack(a, b, &out);
-		else
-		{
-			free_stack(&a);
-			free_stack(&b);
-		}
+			sort_stack(&a, &b, &out);
+		display_stack(a, b);
 		compute_total_ops(&out);
 		bench_output(out);
 	}

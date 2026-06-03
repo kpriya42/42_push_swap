@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 17:58:24 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/02 14:14:17 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/02 18:54:54 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	display_stack(const t_stack *a, const t_stack *b);
 
-//void	test_operations(t_stack *a, t_stack *b, t_output *out)
+//void	test_operations(t_stack **a, t_stack **b, t_output *out)
 //{
 //	printf ("original\n");
 //	display_stack(a, b);

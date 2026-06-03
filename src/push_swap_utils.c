@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:08:19 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/02 14:18:45 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 12:34:01 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,44 +26,40 @@ t_stack	*find_last(t_stack *stack)
 	return (templist);
 }
 
-double	compute_disorder(t_stack *head)
+int	stack_size(t_stack *stack)
 {
-	t_stack	*current;
-	t_stack	*next;
-	long	mistakes;
-	long	total_pairs;
+	int	size;
 
-	mistakes = 0;
-	total_pairs = 0;
-	current = head;
-	while (current)
+	size = 0;
+	while (stack)
 	{
-		next = current->next;
-		while (next)
-		{
-			total_pairs += 1;
-			if (current->value > next->value)
-				mistakes += 1;
-			next = next->next;
-		}
-		current = current->next;
+		size++;
+		stack = stack->next;
 	}
-	if (total_pairs == 0)
-		return (0.00);
-	return ((double)mistakes / (double)total_pairs);
+	return (size);
 }
 
-void	compute_total_ops(t_output *out)
+int	is_sorted(t_stack *stack)
 {
-	out->total_count += out->sa_count;
-	out->total_count += out->sb_count;
-	out->total_count += out->ss_count;
-	out->total_count += out->ra_count;
-	out->total_count += out->rb_count;
-	out->total_count += out->rr_count;
-	out->total_count += out->rra_count;
-	out->total_count += out->rrb_count;
-	out->total_count += out->rrr_count;
-	out->total_count += out->pa_count;
-	out->total_count += out->pb_count;
+	while (stack && stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (FALSE);
+		stack = stack->next;
+	}
+	return (TRUE);
+}
+
+t_stack	*find_max_index_node(t_stack *stack)
+{
+	t_stack	*max;
+
+	max = stack;
+	while (stack)
+	{
+		if (stack->index > max->index)
+			max = stack;
+		stack = stack->next;
+	}
+	return (max);
 }
