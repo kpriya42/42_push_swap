@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/03 16:55:37 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 18:31:30 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,9 @@ t_stack	*find_last(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		is_sorted(t_stack *stack);
 t_stack	*find_max_index_node(t_stack *stack);
+t_stack	*find_min_node(t_stack *stack);
+t_stack	*find_max_node(t_stack *stack);
+int		get_node_pos(t_stack *stack, t_stack *target);
 
 //bench mode output
 void	bench_output(t_output out);

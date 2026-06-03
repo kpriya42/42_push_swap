@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:36:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 12:32:35 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 18:38:17 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,6 @@ static t_stack	*create_new_node(int value)
 		return (NULL);
 	node->value = value;
 	node->index = 0;
-	node->pos = 0;
-	node->target_pos = 0;
-	node->cost_a = 0;
-	node->cost_b = 0;
-	node->total_cost = 0;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
@@ -98,6 +93,7 @@ void	free_stack(t_stack **head)
 
 void	init_out(t_input *input, t_stack *a, t_output *out)
 {
+	printf ("inside inti out\n");
 	out->strategy = input->strategy;
 	out->disorder = compute_disorder(a);
 	out->sa_count = 0;
@@ -112,4 +108,5 @@ void	init_out(t_input *input, t_stack *a, t_output *out)
 	out->pa_count = 0;
 	out->pb_count = 0;
 	out->total_count = 0;
+	printf ("disorder = %f\n", out->disorder);
 }

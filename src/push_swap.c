@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 12:29:26 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/03 19:07:00 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 {
-	//if (out->strategy == SIMPLE)
+	int	size;
+
+	size = stack_size(*a);
+	if (size == 2)
+	{
+		if ((*a)->value > (*a)->next->value)
+			sa(a, out);
+	}
+	else if (size == 3)
+		sort_three(a, out);
+	else if (out->strategy == SIMPLE || (out->strategy == ADAPTIVE
+			&& out->disorder < LOW_DISORDER))
 		insertion_based_sort(a, b, out);
-	//else if (out->strategy == MEDIUM)
-	//	medium_sort(a, b, out);
-	//else if (out->strategy == COMPLEX)
+	//else if (out->strategy == COMPLEX || (out->strategy == ADAPTIVE
+	//		&& out->disorder > HIGH_DISORDER))
 	//	complex_sort(a, b, out);
-	//else if (out->strategy == ADAPTIVE)
-	//{
-	//	if (out->disorder < LOW_DISORDER)
-	//		insertion_based_sort(a, b, out);
-	//	else if (out->disorder >= LOW_DISORDER
-	//		&& out->disorder <= HIGH_DISORDER)
-	//		medium_sort(a, b, out);
-	//	else
-	//		complex_sort(a, b, out);
-	//}
+	//else
+	//	medium_sort(a, b, out);
 }
 
 void	sort_three(t_stack **a, t_output *out)
@@ -53,6 +55,7 @@ double	compute_disorder(t_stack *head)
 	t_stack	*next;
 	long	mistakes;
 	long	total_pairs;
+	double	disorder;
 
 	mistakes = 0;
 	total_pairs = 0;
@@ -70,8 +73,9 @@ double	compute_disorder(t_stack *head)
 		current = current->next;
 	}
 	if (total_pairs == 0)
-		return (0.00);
-	return ((double)mistakes / (double)total_pairs);
+		return (0);
+	disorder = (double)mistakes / (double)total_pairs ;
+	return (disorder);
 }
 
 void	compute_total_ops(t_output *out)
