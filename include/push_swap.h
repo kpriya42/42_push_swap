@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/03 18:31:30 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 14:55:01 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	init_out(t_input *input, t_stack *a, t_output *out);
 
 //push_swap.c
 void	sort_stack(t_stack **a, t_stack **b, t_output *out);
-void	sort_three(t_stack **a, t_output *out);
 double	compute_disorder(t_stack *head);
 void	compute_total_ops(t_output *out);
 

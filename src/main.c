@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/03 18:53:39 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 14:50:33 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,46 @@ int	main(int ac, char **av)
 		return (0);
 	check_space(av);
 	clean_data = parse_args(ac, av);
-	test_input(clean_data);
 	a = init_stack(clean_data);
 	if (a)
 	{
 		init_out(&clean_data, a, &out);
 		if (out.disorder > 0.0)
 			sort_stack(&a, &b, &out);
-		display_stack(a, b);
 		compute_total_ops(&out);
-		bench_output(out);
+		if (clean_data.bench_mark)
+			bench_output(out);
 	}
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
 }
+
+//int	main(int ac, char **av)
+//{
+//	t_input		clean_data;
+//	t_stack		*a;
+//	t_stack		*b;
+//	t_output	out;
+
+//	a = NULL;
+//	b = NULL;
+//	if (ac == 1)
+//		return (0);
+//	check_space(av);
+//	clean_data = parse_args(ac, av);
+//	test_input(clean_data);
+//	a = init_stack(clean_data);
+//	if (a)
+//	{
+//		init_out(&clean_data, a, &out);
+//		if (out.disorder > 0.0)
+//			sort_stack(&a, &b, &out);
+//		display_stack(a, b);
+//		compute_total_ops(&out);
+//		bench_output(out);
+//	}
+//	free_stack(&a);
+//	free_stack(&b);
+//	return (0);
+//}

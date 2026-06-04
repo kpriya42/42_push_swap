@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 12:23:37 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 18:59:24 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 13:32:40 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ static void	rotate_max_to_top(t_stack **b, t_output *out)
 	rotate_target_to_top(b, max, out);
 }
 
-static void	find_insert_position_in_b(t_stack **a, t_stack **b, int value,\
+static void	insert_avalue_in_b(t_stack **a, t_stack **b, int value,\
 	t_output *out)
 {
-	t_stack	*target;
+	t_stack	*target_pos;
 
-	target = *b;
-	while (target)
+	target_pos = *b;
+	while (target_pos)
 	{
-		if (target->value < value)
+		if (target_pos->value < value)
 			break ;
-		target = target->next;
+		target_pos = target_pos->next;
 	}
-	rotate_target_to_top(b, target, out);
+	rotate_target_to_top(b, target_pos, out);
 	pb(a, b, out);
 }
 
@@ -84,7 +84,7 @@ static void	insert_top_a_into_b(t_stack **a, t_stack **b, t_output *out)
 		rb(b, out);
 		return ;
 	}
-	find_insert_position_in_b(a, b, avalue, out);
+	insert_avalue_in_b(a, b, avalue, out);
 	rotate_max_to_top(b, out);
 }
 	//target = find_insert_position_in_b(*b, value);

@@ -6,47 +6,68 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 19:07:00 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 16:09:06 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//static void	sort_three(t_stack **a, t_output *out)
+//{
+//	t_stack	*max;
+
+//	if (is_sorted(*a))
+//		return ;
+//	max = find_max_index_node(*a);
+//	if (max == *a)
+//		ra(a, out);
+//	else if (max == (*a)->next)
+//		rra(a, out);
+//	if ((*a)->next && (*a)->index > (*a)->next->index)
+//		sa(a, out);
+//}
+
+//static void	sort_small(t_stack **a, t_stack **b, t_output *out, int size)
+//{
+//	if (size == 2)
+//	{
+//		if ((*a)->value > (*a)->next->value)
+//			sa(a, out);
+//	}
+//	else if (size == 3)
+//		sort_three(a, out);
+//	else if (size == 4)
+//	{
+//		//
+//	}
+//	else
+//	{
+//		//
+//	}
+//}
+
 void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 {
-	int	size;
+	//int	size;
 
-	size = stack_size(*a);
-	if (size == 2)
-	{
-		if ((*a)->value > (*a)->next->value)
-			sa(a, out);
-	}
-	else if (size == 3)
-		sort_three(a, out);
-	else if (out->strategy == SIMPLE || (out->strategy == ADAPTIVE
-			&& out->disorder < LOW_DISORDER))
+	if (out->strategy == SIMPLE)
 		insertion_based_sort(a, b, out);
-	//else if (out->strategy == COMPLEX || (out->strategy == ADAPTIVE
-	//		&& out->disorder > HIGH_DISORDER))
+	//else if (out->strategy == MEDIUM)
+	//	medium_sort(a, b, out);
+	//else if (out->strategy == COMPLEX)
 	//	complex_sort(a, b, out);
 	//else
-	//	medium_sort(a, b, out);
-}
-
-void	sort_three(t_stack **a, t_output *out)
-{
-	t_stack	*max;
-
-	if (is_sorted(*a))
-		return ;
-	max = find_max_index_node(*a);
-	if (max == *a)
-		ra(a, out);
-	else if (max == (*a)->next)
-		rra(a, out);
-	if ((*a)->next && (*a)->index > (*a)->next->index)
-		sa(a, out);
+	//{
+		//size = stack_size(*a);
+		//if (size <= 5)
+		//	sort_small(a, b, out, size);
+		//else if (out->disorder < LOW_DISORDER)
+		//	insertion_based_sort(a, b, out);
+		//else if (out->disorder > HIGH_DISORDER)
+		//	complex_sort(a, b, out);
+		//else
+		//	medium_sort(a, b, out);
+	//}
 }
 
 double	compute_disorder(t_stack *head)
@@ -92,3 +113,4 @@ void	compute_total_ops(t_output *out)
 	out->total_count += out->pa_count;
 	out->total_count += out->pb_count;
 }
+
