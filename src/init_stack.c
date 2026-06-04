@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 15:36:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 18:38:17 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 16:37:20 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	free_stack(t_stack **head)
 
 void	init_out(t_input *input, t_stack *a, t_output *out)
 {
-	printf ("inside inti out\n");
 	out->strategy = input->strategy;
 	out->disorder = compute_disorder(a);
 	out->sa_count = 0;
@@ -108,5 +107,4 @@ void	init_out(t_input *input, t_stack *a, t_output *out)
 	out->pa_count = 0;
 	out->pb_count = 0;
 	out->total_count = 0;
-	printf ("disorder = %f\n", out->disorder);
 }

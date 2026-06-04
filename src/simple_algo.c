@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 12:23:37 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 13:32:40 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 17:30:38 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,60 +43,49 @@ static void	rotate_max_to_top(t_stack **b, t_output *out)
 	rotate_target_to_top(b, max, out);
 }
 
-static void	insert_avalue_in_b(t_stack **a, t_stack **b, int value,\
-	t_output *out)
+static void	insert_avalue_in_b(t_stack **a, t_stack **b, t_output *out)
 {
-	t_stack	*target_pos;
+	int		avalue;
+	t_stack	*pos_to_insert;
 
-	target_pos = *b;
-	while (target_pos)
+	pos_to_insert = *b;
+	avalue = (*a)->value;
+	while (pos_to_insert)
 	{
-		if (target_pos->value < value)
+		if (pos_to_insert->value < avalue)
 			break ;
-		target_pos = target_pos->next;
+		pos_to_insert = pos_to_insert->next;
 	}
-	rotate_target_to_top(b, target_pos, out);
+	rotate_target_to_top(b, pos_to_insert, out);
 	pb(a, b, out);
+	rotate_max_to_top(b, out);
 }
 
-static void	insert_top_a_into_b(t_stack **a, t_stack **b, t_output *out)
+void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out)
 {
 	int		avalue;
 	t_stack	*min;
 	t_stack	*max;
 
-	if (!b || !*b)
-	{
-		pb(a, b, out);
-		return ;
-	}
-	avalue = (*a)->value;
-	min = find_min_node(*b);
-	max = find_max_node(*b);
-	if (avalue > max->value)
-	{
-		pb(a, b, out);
-		return ;
-	}
-	if (avalue < min->value)
-	{
-		pb(a, b, out);
-		rb(b, out);
-		return ;
-	}
-	insert_avalue_in_b(a, b, avalue, out);
-	rotate_max_to_top(b, out);
-}
-	//target = find_insert_position_in_b(*b, value);
-	//rotate_b_to_top(b, target, out);
-	//pb(a, b, out);
-
-void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out)
-{
 	if (!a || !*a || is_sorted(*a))
 		return ;
 	while (*a)
-		insert_top_a_into_b(a, b, out);
+	{
+		if (!b || !*b)
+			pb(a, b, out);
+		avalue = (*a)->value;
+		min = find_min_node(*b);
+		max = find_max_node(*b);
+		if (avalue > max->value)
+			pb(a, b, out);
+		else if (avalue < min->value)
+		{
+			pb(a, b, out);
+			rb(b, out);
+		}
+		else
+			insert_avalue_in_b(a, b, out);
+	}
 	while (*b)
 		pa(a, b, out);
 }

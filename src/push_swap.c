@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 16:09:06 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 16:34:21 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 {
 	//int	size;
 
-	if (out->strategy == SIMPLE)
+	//if (out->strategy == SIMPLE)
 		insertion_based_sort(a, b, out);
 	//else if (out->strategy == MEDIUM)
 	//	medium_sort(a, b, out);
@@ -58,15 +58,15 @@ void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 	//	complex_sort(a, b, out);
 	//else
 	//{
-		//size = stack_size(*a);
-		//if (size <= 5)
-		//	sort_small(a, b, out, size);
-		//else if (out->disorder < LOW_DISORDER)
-		//	insertion_based_sort(a, b, out);
-		//else if (out->disorder > HIGH_DISORDER)
-		//	complex_sort(a, b, out);
-		//else
-		//	medium_sort(a, b, out);
+	//	size = stack_size(*a);
+	//	if (size <= 5)
+	//		sort_small(a, b, out, size);
+	//	else if (out->disorder < LOW_DISORDER)
+	//		insertion_based_sort(a, b, out);
+	//	else if (out->disorder > HIGH_DISORDER)
+	//		complex_sort(a, b, out);
+	//	else
+	//		medium_sort(a, b, out);
 	//}
 }
 
