@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 12:06:39 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/02 15:42:43 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 17:53:15 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	bench_output(t_output out)
 	int		fd;
 	double	temp;
 
-	fd = STDOUT_FILENO;
+	fd = STDERR_FILENO;
 	temp = out.disorder * 100;
 	ft_putstr_fd("[bench] disorder: ", fd);
 	ft_putnbr_fd(temp, fd);

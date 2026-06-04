@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/06/02 19:20:19 by kri-             ###   ########.fr        #
+#    Updated: 2026/06/04 18:50:44 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS = test_file_1.c \
 		push_swap_utils.c \
 		push_swap.c \
 		simple_algo.c \
+		complex_algo.c \
 		operation_swap.c \
 		operation_rotate.c \
 		operation_revrotate.c \

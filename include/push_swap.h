@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/04 14:55:01 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 18:36:04 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	compute_total_ops(t_output *out);
 
 void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out);
 //void	medium_sort(t_stack **a, t_stack **b, t_output *out);
-//void	complex_sort(t_stack **a, t_stack **b, t_output *out);
+void	radix_based_sort(t_stack **a, t_stack **b, t_output *out);
 
 //operations	
 void	sa(t_stack **a, t_output *out);
@@ -108,6 +108,7 @@ t_stack	*find_max_index_node(t_stack *stack);
 t_stack	*find_min_node(t_stack *stack);
 t_stack	*find_max_node(t_stack *stack);
 int		get_node_pos(t_stack *stack, t_stack *target);
+void	rotate_target_to_top(t_stack **stack, t_stack *target, t_output *out);
 
 //bench mode output
 void	bench_output(t_output out);

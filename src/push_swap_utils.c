@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:08:19 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/03 18:31:40 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 18:37:50 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,24 @@ t_stack	*find_max_index_node(t_stack *stack)
 		stack = stack->next;
 	}
 	return (max);
+}
+void	rotate_target_to_top(t_stack **stack, t_stack *target, t_output *out)
+{
+	int	size;
+	int	pos;
+
+	if (!stack || !*stack || !target)
+		return ;
+	size = stack_size(*stack);
+	pos = get_node_pos(*stack, target);
+	if (pos <= size / 2)
+	{
+		while (*stack != target)
+			rb(stack, out);
+	}
+	else
+	{
+		while (*stack != target)
+			rrb(stack, out);
+	}
 }

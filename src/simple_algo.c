@@ -6,32 +6,11 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 12:23:37 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 17:30:38 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 18:37:21 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	rotate_target_to_top(t_stack **b, t_stack *target, t_output *out)
-{
-	int	size;
-	int	pos;
-
-	if (!b || !*b || !target)
-		return ;
-	size = stack_size(*b);
-	pos = get_node_pos(*b, target);
-	if (pos <= size / 2)
-	{
-		while (*b != target)
-			rb(b, out);
-	}
-	else
-	{
-		while (*b != target)
-			rrb(b, out);
-	}
-}
 
 static void	rotate_max_to_top(t_stack **b, t_output *out)
 {

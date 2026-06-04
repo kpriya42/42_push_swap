@@ -6,68 +6,82 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 16:34:21 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/04 18:50:17 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//static void	sort_three(t_stack **a, t_output *out)
-//{
-//	t_stack	*max;
+static void	sort_three(t_stack **a, t_output *out)
+{
+	t_stack	*max;
 
-//	if (is_sorted(*a))
-//		return ;
-//	max = find_max_index_node(*a);
-//	if (max == *a)
-//		ra(a, out);
-//	else if (max == (*a)->next)
-//		rra(a, out);
-//	if ((*a)->next && (*a)->index > (*a)->next->index)
-//		sa(a, out);
-//}
+	if (is_sorted(*a))
+		return ;
+	max = find_max_index_node(*a);
+	if (max == *a)
+		ra(a, out);
+	else if (max == (*a)->next)
+		rra(a, out);
+	if ((*a)->next && (*a)->index > (*a)->next->index)
+		sa(a, out);
+}
 
-//static void	sort_small(t_stack **a, t_stack **b, t_output *out, int size)
-//{
-//	if (size == 2)
-//	{
-//		if ((*a)->value > (*a)->next->value)
-//			sa(a, out);
-//	}
-//	else if (size == 3)
-//		sort_three(a, out);
-//	else if (size == 4)
-//	{
-//		//
-//	}
-//	else
-//	{
-//		//
-//	}
-//}
+static void	sort_small(t_stack **a, t_stack **b, t_output *out, int size)
+{
+	t_stack	*min;
+
+	if (size == 3)
+		sort_three(a, out);
+	else if (size == 4)
+	{
+		min = find_min_node(*a);
+		rotate_target_to_top(a, min, out);
+		pb(a, b, out);
+		sort_three(a, out);
+		pa(a, b, out);
+	}
+	else if (size == 5)
+	{
+		min = find_min_node(*a);
+		rotate_target_to_top(a, min, out);
+		pb(a, b, out);
+		min = find_min_node(*a);
+		rotate_target_to_top(a, min, out);
+		pb(a, b, out);
+		sort_three(a, out);
+		pa(a, b, out);
+		pa(a, b, out);
+	}
+}
 
 void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 {
-	//int	size;
+	int	size;
 
-	//if (out->strategy == SIMPLE)
+	if (out->strategy == SIMPLE)
 		insertion_based_sort(a, b, out);
 	//else if (out->strategy == MEDIUM)
 	//	medium_sort(a, b, out);
-	//else if (out->strategy == COMPLEX)
-	//	complex_sort(a, b, out);
-	//else
-	//{
-	//	size = stack_size(*a);
-	//	if (size <= 5)
-	//		sort_small(a, b, out, size);
-	//	else if (out->disorder < LOW_DISORDER)
-	//		insertion_based_sort(a, b, out);
-	//	else if (out->disorder > HIGH_DISORDER)
-	//		complex_sort(a, b, out);
-	//	else
-	//		medium_sort(a, b, out);
-	//}
+	else if (out->strategy == COMPLEX)
+		radix_based_sort(a, b, out);
+	else
+	{
+		size = stack_size(*a);
+		if (size == 2)
+		{
+			if ((*a)->value > (*a)->next->value)
+				sa(a, out);
+		}
+		else if (size <= 5)
+			sort_small(a, b, out, size);
+		else if (out->disorder < LOW_DISORDER)
+			insertion_based_sort(a, b, out);
+		else if (out->disorder > HIGH_DISORDER)
+			radix_based_sort(a, b, out);
+		//else
+			//medium_sort(a, b, out);
+	}
 }
 
 double	compute_disorder(t_stack *head)
