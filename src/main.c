@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/04 18:51:15 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/05 18:05:18 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(int ac, char **av)
 		if (out.disorder > 0.0)
 			sort_stack(&a, &b, &out);
 		compute_total_ops(&out);
-		//if (clean_data.bench_mark)
+		if (clean_data.bench_mark)
 			bench_output(out);
 	}
 	free_stack(&a);

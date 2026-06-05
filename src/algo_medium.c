@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex_algo.c                                     :+:      :+:    :+:   */
+/*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 18:19:16 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 18:49:36 by kri-             ###   ########.fr       */
+/*   Created: 2026/06/05 18:05:04 by kri-              #+#    #+#             */
+/*   Updated: 2026/06/05 18:06:35 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_based_sort(t_stack **a, t_stack **b, t_output *out)
+void	medium_sort(t_stack **a, t_stack **b, t_output *out)
 {
 	(void ) **a;
 	(void ) **b;
-	(void ) *out;
-
-	printf("inside complex\n");
+	(void ) out;
 }

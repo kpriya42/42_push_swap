@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/04 18:36:04 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/05 17:02:42 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	rrr(t_stack **a, t_stack **b, t_output *out);
 t_stack	*find_last(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		is_sorted(t_stack *stack);
-t_stack	*find_max_index_node(t_stack *stack);
 t_stack	*find_min_node(t_stack *stack);
 t_stack	*find_max_node(t_stack *stack);
 int		get_node_pos(t_stack *stack, t_stack *target);

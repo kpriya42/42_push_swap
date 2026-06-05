@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/06/04 18:50:44 by kri-             ###   ########.fr        #
+#    Updated: 2026/06/05 18:03:55 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,15 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS_DIR = src
 SRCS = test_file_1.c \
-		test_file_2.c \
 		main.c \
+		algo_simple.c \
+		algo_complex.c 
     	check_args.c \
     	clean_args.c \
 		init_stack.c \
-		push_swap_utils.c \
+		push_swap_utils_1.c \
+		push_swap_utils_2.c \
 		push_swap.c \
-		simple_algo.c \
-		complex_algo.c \
 		operation_swap.c \
 		operation_rotate.c \
 		operation_revrotate.c \

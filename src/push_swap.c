@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/04 18:50:17 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/05 18:05:36 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sort_three(t_stack **a, t_output *out)
 
 	if (is_sorted(*a))
 		return ;
-	max = find_max_index_node(*a);
+	max = find_max_node(*a);
 	if (max == *a)
 		ra(a, out);
 	else if (max == (*a)->next)
@@ -61,8 +61,8 @@ void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 
 	if (out->strategy == SIMPLE)
 		insertion_based_sort(a, b, out);
-	//else if (out->strategy == MEDIUM)
-	//	medium_sort(a, b, out);
+	else if (out->strategy == MEDIUM)
+		medium_sort(a, b, out);
 	else if (out->strategy == COMPLEX)
 		radix_based_sort(a, b, out);
 	else
@@ -79,8 +79,8 @@ void	sort_stack(t_stack **a, t_stack **b, t_output *out)
 			insertion_based_sort(a, b, out);
 		else if (out->disorder > HIGH_DISORDER)
 			radix_based_sort(a, b, out);
-		//else
-			//medium_sort(a, b, out);
+		else
+			medium_sort(a, b, out);
 	}
 }
 
@@ -127,4 +127,3 @@ void	compute_total_ops(t_output *out)
 	out->total_count += out->pa_count;
 	out->total_count += out->pb_count;
 }
-
