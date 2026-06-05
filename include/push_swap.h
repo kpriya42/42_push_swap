@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/05 17:02:42 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/05 18:33:42 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ double	compute_disorder(t_stack *head);
 void	compute_total_ops(t_output *out);
 
 void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out);
-//void	medium_sort(t_stack **a, t_stack **b, t_output *out);
+void	medium_sort(t_stack **a, t_stack **b, t_output *out);
 void	radix_based_sort(t_stack **a, t_stack **b, t_output *out);
 
 //operations	
