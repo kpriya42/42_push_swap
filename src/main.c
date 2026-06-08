@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/05 18:05:18 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 18:14:36 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,34 @@ int	main(int ac, char **av)
 	free_stack(&b);
 	return (0);
 }
+
+// void	display_stack(const t_stack *a, const t_stack *b)
+// {
+// 	t_stack	*atemp;
+// 	t_stack	*btemp;
+// 	int		aval;
+// 	int		bval;
+
+// 	atemp = (t_stack *) a;
+// 	btemp = (t_stack *) b;
+// 	printf("----------------\n    A    B\n----------------\n");
+// 	while (atemp || btemp)
+// 	{
+// 		if (!atemp)
+// 			aval = 0;
+// 		else
+// 			aval = atemp->value;
+// 		if (!btemp)
+// 			bval = 0;
+// 		else
+// 			bval = btemp->value;
+// 		printf("    %d    %d\n", aval, bval);
+// 		if (atemp)
+// 			atemp = atemp->next;
+// 		if (btemp)
+// 			btemp = btemp->next;
+// 	}
+// }
 
 //int	main(int ac, char **av)
 //{
