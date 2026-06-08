@@ -6,7 +6,7 @@
 /*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:05:04 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 16:55:45 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/08 16:56:51 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,25 @@ void	move_chunks(t_stack **a, t_stack **b, t_output *out, int chunk_size)
 		}
 		current_chunk ++;
 	}
+}
+
+void	sort_push(t_stack **a, t_stack **b, t_output *out)
+{
+	t_stack	*max_node;
+
+	while (*b)
+	{
+		max_node = find_max_node(*b);
+		rotate_target_to_top(b, max_node, out);
+		pa(a, b, out);
+	}
+}
+
+void	medium_sort(t_stack **a, t_stack **b, t_output *out)
+{
+	int	size;
+
+	size = divide_chunks(a);
+	move_chunks(a, b, out, size);
+	sort_push(a, b, out);
 }
