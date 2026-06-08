@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/06/05 18:34:07 by kri-             ###   ########.fr        #
+#    Updated: 2026/06/08 18:09:15 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS_DIR = src
-SRCS = test_file_1.c \
-		main.c \
+SRCS = main.c \
 		algo_complex.c \
 		algo_medium.c \
 		algo_simple.c \

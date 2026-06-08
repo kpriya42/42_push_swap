@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 18:19:16 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/05 18:04:22 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 18:03:15 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ void	radix_based_sort(t_stack **a, t_stack **b, t_output *out)
 		i = 0;
 		while (i < size)
 		{
-			if (((*a)->index & (1 << bit)) != 0)
-			//if ((((*a)->index >> bit) & 1) == 1)
+			if ((((*a)->index >> bit) & 1) == 1)
 				ra(a, out);
 			else
 				pb(a, b, out);

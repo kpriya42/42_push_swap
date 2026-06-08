@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:05:04 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 16:56:51 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/08 17:26:58 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	divide_chunks(t_stack **a)
+static int	divide_chunks(t_stack **a)
 {
 	int	chunk_size;
 	int	size;
@@ -24,7 +24,7 @@ int	divide_chunks(t_stack **a)
 	return (chunk_size);
 }
 
-void	move_chunks(t_stack **a, t_stack **b, t_output *out, int chunk_size)
+static void	move_chunks(t_stack **a, t_stack **b, t_output *out, int chunk_size)
 {
 	int	current_chunk;
 	int	count;
@@ -50,7 +50,7 @@ void	move_chunks(t_stack **a, t_stack **b, t_output *out, int chunk_size)
 	}
 }
 
-void	sort_push(t_stack **a, t_stack **b, t_output *out)
+static void	sort_push(t_stack **a, t_stack **b, t_output *out)
 {
 	t_stack	*max_node;
 
