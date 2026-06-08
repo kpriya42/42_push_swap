@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:05:04 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 19:42:38 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 20:11:29 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	medium_sort(t_stack **a, t_stack **b, t_output *out)
 {
 	int	size;
 
-	printf("In medium\n");
 	size = divide_chunks(a);
 	move_chunks(a, b, out, size);
 	sort_push(a, b, out);

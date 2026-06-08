@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/08 19:40:25 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 20:11:46 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -109,7 +108,8 @@ int		is_sorted(t_stack *stack);
 t_stack	*find_min_node(t_stack *stack);
 t_stack	*find_max_node(t_stack *stack);
 int		get_node_pos(t_stack *stack, t_stack *target);
-void	rotate_to_top(t_stack **stack, t_stack *target, t_output *out, int name);
+void	rotate_to_top(t_stack **stack, t_stack *target, t_output *out,\
+		int name);
 
 //bench mode output
 void	bench_output(t_output out);

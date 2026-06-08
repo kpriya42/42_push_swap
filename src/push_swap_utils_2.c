@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:08:19 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 19:41:17 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 20:06:37 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rotate_to_top(t_stack **stack, t_stack *target, t_output *out, int name)
 	if (!stack || !*stack || !target)
 		return ;
 	pos = get_node_pos(*stack, target);
-	if (pos <= (stack_size(*stack)) / 2)
+	if (pos <= (stack_size(*stack) / 2))
 	{
 		while (*stack != target)
 		{

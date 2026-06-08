@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 12:23:37 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 19:42:57 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 20:11:18 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out)
 
 	if (!a || !*a || is_sorted(*a))
 		return ;
-	printf("In simple\n");
 	while (*a)
 	{
 		if (!b || !*b)
