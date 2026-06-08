@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/08 17:09:23 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 19:40:25 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # define COMPLEX 3
 # define FALSE 0
 # define TRUE 1
+# define STACKA 'A'
+# define STACKB 'B'
 # define LOW_DISORDER 0.2
 # define HIGH_DISORDER 0.5
 
@@ -107,7 +109,7 @@ int		is_sorted(t_stack *stack);
 t_stack	*find_min_node(t_stack *stack);
 t_stack	*find_max_node(t_stack *stack);
 int		get_node_pos(t_stack *stack, t_stack *target);
-void	rotate_target_to_top(t_stack **stack, t_stack *target, t_output *out);
+void	rotate_to_top(t_stack **stack, t_stack *target, t_output *out, int name);
 
 //bench mode output
 void	bench_output(t_output out);

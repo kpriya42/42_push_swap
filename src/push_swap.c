@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:41:32 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/05 18:05:36 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 19:43:20 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	sort_small(t_stack **a, t_stack **b, t_output *out, int size)
 	else if (size == 4)
 	{
 		min = find_min_node(*a);
-		rotate_target_to_top(a, min, out);
+		rotate_to_top(a, min, out, STACKA);
 		pb(a, b, out);
 		sort_three(a, out);
 		pa(a, b, out);
@@ -44,10 +44,10 @@ static void	sort_small(t_stack **a, t_stack **b, t_output *out, int size)
 	else if (size == 5)
 	{
 		min = find_min_node(*a);
-		rotate_target_to_top(a, min, out);
+		rotate_to_top(a, min, out, STACKA);
 		pb(a, b, out);
 		min = find_min_node(*a);
-		rotate_target_to_top(a, min, out);
+		rotate_to_top(a, min, out, STACKA);
 		pb(a, b, out);
 		sort_three(a, out);
 		pa(a, b, out);

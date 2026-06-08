@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:05:04 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/08 17:26:58 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 19:42:38 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	sort_push(t_stack **a, t_stack **b, t_output *out)
 	while (*b)
 	{
 		max_node = find_max_node(*b);
-		rotate_target_to_top(b, max_node, out);
+		rotate_to_top(b, max_node, out, STACKB);
 		pa(a, b, out);
 	}
 }
@@ -66,6 +66,7 @@ void	medium_sort(t_stack **a, t_stack **b, t_output *out)
 {
 	int	size;
 
+	printf("In medium\n");
 	size = divide_chunks(a);
 	move_chunks(a, b, out, size);
 	sort_push(a, b, out);

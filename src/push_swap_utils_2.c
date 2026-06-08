@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 18:08:19 by kri-              #+#    #+#             */
-/*   Updated: 2026/06/05 18:00:52 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 19:41:17 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,31 @@ int	get_node_pos(t_stack *stack, t_stack *target)
 	return (0);
 }
 
-void	rotate_target_to_top(t_stack **stack, t_stack *target, t_output *out)
+void	rotate_to_top(t_stack **stack, t_stack *target, t_output *out, int name)
 {
-	int	size;
 	int	pos;
 
 	if (!stack || !*stack || !target)
 		return ;
-	size = stack_size(*stack);
 	pos = get_node_pos(*stack, target);
-	if (pos <= size / 2)
+	if (pos <= (stack_size(*stack)) / 2)
 	{
 		while (*stack != target)
-			rb(stack, out);
+		{
+			if (name == STACKB)
+				rb(stack, out);
+			else
+				ra(stack, out);
+		}
 	}
 	else
 	{
 		while (*stack != target)
-			rrb(stack, out);
+		{
+			if (name == STACKB)
+				rrb(stack, out);
+			else
+				rra(stack, out);
+		}
 	}
 }
