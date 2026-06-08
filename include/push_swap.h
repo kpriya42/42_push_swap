@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/05 18:33:42 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/08 16:54:09 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ void	compute_total_ops(t_output *out);
 
 void	insertion_based_sort(t_stack **a, t_stack **b, t_output *out);
 void	medium_sort(t_stack **a, t_stack **b, t_output *out);
+int		divide_chunks(t_stack **a);
+void	move_chunks(t_stack **a, t_stack **b, t_output *out, int chunk_size);
+void	sort_push(t_stack **a, t_stack **b, t_output *out);
 void	radix_based_sort(t_stack **a, t_stack **b, t_output *out);
 
 //operations	
