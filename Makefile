@@ -6,7 +6,7 @@
 #    By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/24 13:31:36 by kri-              #+#    #+#              #
-#    Updated: 2026/06/08 18:09:15 by kri-             ###   ########.fr        #
+#    Updated: 2026/06/09 15:46:39 by kri-             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRCS = main.c \
     	check_args.c \
     	clean_args.c \
 		init_stack.c \
-		push_swap_utils_1.c \
-		push_swap_utils_2.c \
+		sort_utils.c \
+		stack_utils.c \
 		push_swap.c \
 		operation_swap.c \
 		operation_rotate.c \
