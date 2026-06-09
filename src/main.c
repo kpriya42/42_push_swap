@@ -6,7 +6,7 @@
 /*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/09 18:56:23 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/09 19:14:50 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	main(int ac, char **av)
 	check_space(av);
 	clean_data = parse_args(ac, av);
 	a = init_stack(clean_data);
+	free(clean_data.numbers);
 	if (a)
 	{
 		init_out(&clean_data, a, &out);
