@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 17:26:07 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/08 20:11:46 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/09 18:56:50 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		check_dup(int *arry, int size);
 int		all_digit(char *av);
 void	free_split(char **splited_arry);
 void	error_exit(char **splited_arry);
-int		check_convert(char *av, char **splited_arry);
+int		check_convert(char *av, char **splited_arry, int *numbers);
 char	**split_input(int ac, char **av);
 void	remove_flag(char **av, int index);
 int		strategy_selector(char **av);

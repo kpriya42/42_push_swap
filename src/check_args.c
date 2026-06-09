@@ -3,24 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 12:05:15 by meqian            #+#    #+#             */
-/*   Updated: 2026/05/28 18:36:21 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/09 18:55:08 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_convert(char *av, char **splited_arry)
+int	check_convert(char *av, char **splited_arry, int *numbers)
 {
 	long	num;
 
 	if (!all_digit(av))
+	{
+		free(numbers);
 		error_exit(splited_arry);
+	}
 	num = ft_atol(av);
 	if (num > 2147483647 || num < -2147483648)
+	{
+		free(numbers);
 		error_exit(splited_arry);
+	}
 	return ((int) num);
 }
 

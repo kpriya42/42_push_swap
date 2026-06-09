@@ -6,7 +6,7 @@
 /*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/08 18:14:36 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/09 18:56:23 by meqian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ t_input	parse_args(int ac, char **av)
 		data.size++;
 	data.numbers = malloc(sizeof(int) * data.size);
 	while (++i < data.size)
-		data.numbers[i] = check_convert(splited_av[i], splited_av);
+		data.numbers[i] = check_convert(splited_av[i], splited_av,
+				data.numbers);
 	if (check_dup(data.numbers, data.size))
 	{
 		free(data.numbers);
