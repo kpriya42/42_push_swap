@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/08 18:14:36 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/09 18:56:26 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//void	test_operations(t_stack **a, t_stack **b, t_output *out);
-void	display_stack(const t_stack *a, const t_stack *b);
-void	test_input(t_input clean_data);
 
 void	error_exit(char **splited_arry)
 {
@@ -77,6 +73,14 @@ int	main(int ac, char **av)
 	free_stack(&b);
 	return (0);
 }
+
+//void	test_input(t_input clean_data)
+//{
+//	puts("-----------------------------");
+//	printf("bench mark : %d\n", clean_data.bench_mark);
+//	printf("strategy type : %d\n", clean_data.strategy);
+//	printf("size of input : %d\n", clean_data.size);
+//}
 
 // void	display_stack(const t_stack *a, const t_stack *b)
 // {
