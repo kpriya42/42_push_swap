@@ -6,7 +6,7 @@
 /*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:50:55 by kri-              #+#    #+#             */
-/*   Updated: 2026/05/28 13:46:03 by kri-             ###   ########.fr       */
+/*   Updated: 2026/06/10 12:14:17 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*inputstr;
 	char	*substring;
 	size_t	i;
 	size_t	inputlen;
@@ -22,7 +21,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	inputstr = (char *)s;
 	inputlen = ft_strlen(s);
 	if (start >= inputlen)
 		len = 0;
