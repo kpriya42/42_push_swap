@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meqian <meqian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kri- <kri-@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 09:53:08 by meqian            #+#    #+#             */
-/*   Updated: 2026/06/09 19:22:38 by meqian           ###   ########.fr       */
+/*   Updated: 2026/06/10 12:09:40 by kri-             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	main(int ac, char **av)
 	check_space(av);
 	clean_data = parse_args(ac, av);
 	a = init_stack(clean_data);
-	free(clean_data.numbers);
 	if (a)
 	{
 		init_out(&clean_data, a, &out);
@@ -71,6 +70,7 @@ int	main(int ac, char **av)
 		if (clean_data.bench_mark)
 			bench_output(out);
 	}
+	free(clean_data.numbers);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
