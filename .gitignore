@@ -1,0 +1,15 @@
+# Object files
+*.o
+*.out
+
+# Static libraries
+*.a
+
+# Executables
+push_swap
+
+# Object directory
+obj/
+
+# text files
+*.txt
